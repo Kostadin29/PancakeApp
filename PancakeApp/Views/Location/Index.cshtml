@@ -1,0 +1,15 @@
+﻿@model List<LocationListViewModel>
+
+<h2>Our locations:</h2>
+<br />
+
+<div class="card-container">
+    @foreach (var location in Model)
+    {
+        <partial name="~/Views/Shared/Partials/_PartialLocationCard.cshtml" for="@location" />
+    }
+</div>
+
+<a class="btn btn-warning" asp-area="" asp-controller="Home" asp-action="Index">Home page</a>
+
+<a type="button" class="btn btn-secondary" asp-action="Create" asp-route-id="Model.Id">Add Location</a>

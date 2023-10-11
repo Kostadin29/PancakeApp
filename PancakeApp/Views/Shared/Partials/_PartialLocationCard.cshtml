@@ -1,0 +1,17 @@
+﻿@model LocationListViewModel
+
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        Name : @Model.Name
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Address: @Model.Address</li>
+        <li class="list-group-item">Opens at: @Model.OpensAt </li>
+        <li class="list-group-item">Closes at: @Model.ClosesAt </li>
+        <li class="list-group-item">Closes at: @Model.City </li>
+    </ul>
+
+    <br />
+    <a type="button" class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+    <br />
+</div>

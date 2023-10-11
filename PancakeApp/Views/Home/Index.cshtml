@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model HomeViewModel
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Pancake Mania</h1>
+</div>
+
+<h1>Welcome to our pancake app!</h1>
+
+<div class="jumbotron">
+    @if (Model.PancakesOnPromotion.Any())
+    {
+        <h3><i>Today on promotion:</i></h3>
+        <br />
+        <div class="container">
+            <div class="row">
+                @foreach (var pancake in Model.PancakesOnPromotion)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="card" >
+                            <div class="center-image">
+                                <img class="card-img-top" src="@pancake.ImageUrl" alt="Card image cap">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">@pancake.Name</h5>
+                                <h3 class="@(pancake.IsOnPromotion ? "text-success" : "text-danger")">
+                                    @(pancake.IsOnPromotion ? "On Promotion" : "Not On Promotion")
+                                </h3>
+                                <p class="card-text">Price: $@pancake.Price</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <h3>No pancake on promotion today.</h3>
+    }
+</div>
+
+<div class="home-btn-menu">
+    <a class="btn btn-info" asp-area="" asp-controller="Pancake" asp-action="Index">Menu</a>
+</div>

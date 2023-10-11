@@ -1,0 +1,28 @@
+﻿@model PancakeIngredientsViewModel
+
+<h2>Pancake ingredients : </h2>
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="@Model.ImageUrl" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">Price: @Model.Price $</p>
+        <h3 class="
+                @(Model.IsOnPromotion ? "text-success" : "text-danger")">
+                @(Model.IsOnPromotion ? "On Promotion" : "Not On Promotion")
+
+        </h3>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Color : @Model.Color</li>
+        <li class="list-group-item">Has Protein : @Model.HasProtein</li>
+        <li class="list-group-item">Has Candies : @Model.HasCandies</li>
+        <li class="list-group-item">Has Fruits : @Model.HasFruits</li>
+        <li class="list-group-item">Has Syrup : @Model.HasSyrup</li>
+        <li class="list-group-item">Has Whipped Cream : @Model.HasWhippedCream</li>
+    </ul>
+</div>
+
+<br />
+<a class="btn btn-warning" asp-area="" asp-controller="Pancake" asp-action="Index">Go back to the pancakes</a>
+

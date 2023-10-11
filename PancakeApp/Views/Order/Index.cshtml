@@ -1,0 +1,17 @@
+﻿@model List<OrderListViewModel>
+
+
+<div class="card-container">
+    @{
+        int orderNumber = 1;
+    }
+    @foreach (var order in Model)
+    {
+        <h3>Order number: @orderNumber</h3>
+        <partial name="/Views/Shared/Partials/_PartialOrderCard.cshtml" for="@order" />
+        orderNumber++;
+    }
+</div>
+
+<a class="btn btn-warning" asp-area="" asp-controller="Home" asp-action="Index">Home page</a>
+<a class="btn btn-warning" asp-area="" asp-controller="Order" asp-action="Create">Create new order</a>

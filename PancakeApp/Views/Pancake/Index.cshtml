@@ -1,0 +1,15 @@
+﻿@model List<PancakeListViewModel>
+
+<h2>List of pancakes: </h2>
+<br />
+
+<div class="card-container">
+    @foreach (var pancake in @Model)
+    {
+        <partial name="~/Views/Shared/Partials/_PartialPancakeCard.cshtml" for="@pancake" />
+    }
+</div>
+<br />
+
+<a class="btn btn-warning" asp-area="" asp-controller="Home" asp-action="Index">Home page</a>
+<a class="btn btn-warning" asp-area="" asp-controller="Pancake" asp-action="Create">Create new pancake</a>

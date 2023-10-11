@@ -1,0 +1,16 @@
+﻿@model OrderListViewModel
+
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Name: @Model.FullName</li>
+        <li class="list-group-item">Address: @Model.Address</li>
+        <li class="list-group-item @(Model.IsDelivered ? "text-success" : "text-danger")">
+            <b>@(Model.IsDelivered ? "Delivered" : "Not Delivered")</b>
+        </li>
+        <li class="list-group-item">Shape: @Model.PancakeShape</li>
+    </ul>
+    <a class="btn btn-danger" asp-area="" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+    <br />
+    <a class="btn btn-primary" asp-area="" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+</div>

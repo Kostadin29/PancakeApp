@@ -1,0 +1,25 @@
+﻿@model PancakeListViewModel
+
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="@Model.ImageUrl" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">Price: @Model.Price$</p>
+        <h3 class="
+                @(Model.IsOnPromotion ? "text-success" : "text-danger")">
+                @(Model.IsOnPromotion ? "On Promotion" : "Not On Promotion")
+
+        </h3>
+
+        </p>
+        <br />
+        <a type="button" class="btn btn-primary" asp-action="Ingredients" asp-route-id="@Model.Id">Ingredients</a>
+        <br />
+        <a class="btn btn-danger" asp-area="" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+        <br />
+        <a class="btn btn-primary" asp-area="" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+    </div>
+    <br />
+
+</div>

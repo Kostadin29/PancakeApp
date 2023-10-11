@@ -1,0 +1,31 @@
+﻿@model LocationViewModel
+
+<h3>Add new Location</h3>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" method="post">
+            <div class="form-group">
+                <label asp-for="Name" class="custom-control-label"></label>
+                <input type="text" asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="custom-control-label"></label>
+                <input type="text" asp-for="Address" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="OpensAt" class="custom-control-label"></label>
+                <input type="text" asp-for="OpensAt" class="form-control" placeholder="ex. 09:00" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ClosesAt" class="custom-control-label"></label>
+                <input type="text" asp-for="ClosesAt" class="form-control" placeholder="ex. 22:00" />
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="custom-control-label"></label>
+                <input type="text" asp-for="City" class="form-control" placeholder="ex. New York" />
+            </div>
+            <button type="submit" class="btn btn-outline-success">Add</button>
+        </form>
+    </div>
+</div>

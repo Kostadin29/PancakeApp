@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PancakeApp.DataAccess\PancakeApp.DataAccess.csproj" />
+    <ProjectReference Include="..\PancakeApp.Mappers\PancakeApp.Mappers.csproj" />
+    <ProjectReference Include="..\PancakeApp.ViewModels\PancakeApp.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>
